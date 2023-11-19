@@ -1,104 +1,58 @@
-import Link from "next/link"
-import {
-  BanknoteIcon,
-  BarChart2Icon,
-  FolderArchiveIcon,
-  HelpCircleIcon,
-  LayoutDashboardIcon,
-  Settings2Icon,
-  ShoppingBagIcon,
-  User2Icon,
-  Users2Icon,
-} from "lucide-react"
+"use client"
 
-const menuItems = [
+import { cn } from "@/lib/utils"
+// import {
+//   LayoutDashboardIcon,
+//   Settings2Icon,
+//   ShoppingBagIcon,
+//   User2Icon,
+// } from "lucide-react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+const links = [
   {
-    title: "Pages",
-    list: [
-      {
-        title: "Dashboard",
-        path: "/dashboard",
-        icon: <LayoutDashboardIcon />,
-      },
-      {
-        title: "Users",
-        path: "/dashboard/users",
-        icon: <User2Icon />,
-      },
-      {
-        title: "Products",
-        path: "/dashboard/products",
-        icon: <ShoppingBagIcon />,
-      },
-      {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <BanknoteIcon />,
-      },
-    ],
+    name: "Overview",
+    href: "/dashboard",
+    // icon: <LayoutDashboardIcon />,
   },
   {
-    title: "Analytics",
-    list: [
-      {
-        title: "Revenue",
-        path: "/dashboard/revenue",
-        icon: <FolderArchiveIcon />,
-      },
-      {
-        title: "Reports",
-        path: "/dashboard/reports",
-        icon: <BarChart2Icon />,
-      },
-      {
-        title: "Teams",
-        path: "/dashboard/teams",
-        icon: <Users2Icon />,
-      },
-    ],
+    name: "customers",
+    href: "/dashboard/customers",
+    // icon: <User2Icon />,
   },
   {
-    title: "User",
-    list: [
-      {
-        title: "Settings",
-        path: "/dashboard/settings",
-        icon: <Settings2Icon />,
-      },
-      {
-        title: "Help",
-        path: "/dashboard/help",
-        icon: <HelpCircleIcon />,
-      },
-    ],
+    name: "Products",
+    href: "/dashboard/products",
+    // icon: <ShoppingBagIcon />,
   },
 ]
 
-export default function NavLinks() {
+export default function NavLinks({
+  className,
+  ...props
+}: React.ComponentProps<"nav">) {
+  const pathname = usePathname()
+
   return (
-    <>
-      {menuItems.map((item) => {
-        return (
-          <div key={item.title} className="mb-5">
-            <h3 className="mb-2 text-sm font-bold uppercase text-gray-500">
-              {item.title}
-            </h3>
-            <ul>
-              {item.list.map((subitem) => (
-                <li key={subitem.title}>
-                  <Link
-                    href={subitem.path}
-                    className="flex items-center text-gray-400 hover:text-gray-600"
-                  >
-                    <span className="mr-3">{subitem.icon}</span>
-                    {subitem.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )
-      })}
-    </>
+    <nav
+      className={cn("flex items-center space-x-4 lg:space-x-6", className)}
+      {...props}
+    >
+      {links.map((link) => (
+        <Link
+          key={link.name}
+          href={link.href}
+          className={cn(
+            "hover:text-primary text-sm font-medium transition-colors",
+            {
+              "text-muted-foreground": pathname !== link.href,
+            }
+          )}
+        >
+          {link.name}
+        </Link>
+      ))}
+    </nav>
   )
 }
