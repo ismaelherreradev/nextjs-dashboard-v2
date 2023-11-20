@@ -17,14 +17,14 @@ const links = [
     // icon: <LayoutDashboardIcon />,
   },
   {
+    name: "Invoices",
+    href: "/dashboard/products",
+    // icon: <ShoppingBagIcon />,
+  },
+  {
     name: "customers",
     href: "/dashboard/customers",
     // icon: <User2Icon />,
-  },
-  {
-    name: "Products",
-    href: "/dashboard/products",
-    // icon: <ShoppingBagIcon />,
   },
 ]
 

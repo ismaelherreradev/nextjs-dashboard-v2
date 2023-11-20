@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <MainNav />
       </header>
       <section className="container relative">
-        <div className="flex-1 space-y-4 p-8 pt-6">{children}</div>
+        <div className="flex-1 pt-6">{children}</div>
       </section>
     </main>
   )
