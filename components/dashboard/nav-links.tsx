@@ -16,11 +16,11 @@ const links = [
     href: "/dashboard",
     // icon: <LayoutDashboardIcon />,
   },
-  {
-    name: "Invoices",
-    href: "/dashboard/products",
-    // icon: <ShoppingBagIcon />,
-  },
+  // {
+  //   name: "Invoices",
+  //   href: "/dashboard/products",
+  //   // icon: <ShoppingBagIcon />,
+  // },
   {
     name: "customers",
     href: "/dashboard/customers",

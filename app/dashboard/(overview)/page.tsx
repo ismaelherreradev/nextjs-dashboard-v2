@@ -1,4 +1,4 @@
-import CardWrapper from "@/components/dashboard/card-wrapper"
+import CardWrapper from "@/components/dashboard/cards-wrapper"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { LayoutDashboardIcon } from "lucide-react"
 
