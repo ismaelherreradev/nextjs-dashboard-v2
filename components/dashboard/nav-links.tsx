@@ -21,11 +21,11 @@ const links = [
   //   href: "/dashboard/products",
   //   // icon: <ShoppingBagIcon />,
   // },
-  {
-    name: "customers",
-    href: "/dashboard/customers",
-    // icon: <User2Icon />,
-  },
+  // {
+  //   name: "customers",
+  //   href: "/dashboard/customers",
+  //   // icon: <User2Icon />,
+  // },
 ]
 
 export default function NavLinks({

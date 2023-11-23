@@ -1,5 +1,6 @@
 import CardWrapper from "@/components/dashboard/cards-wrapper"
-import { Overview } from "@/components/dashboard/chart"
+import LastestInvoices from "@/components/dashboard/latest-invoices"
+import OverviewChart from "@/components/dashboard/overview-chart"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { LayoutDashboardIcon } from "lucide-react"
 
@@ -22,7 +23,8 @@ export default function Dashboard() {
               <CardWrapper />
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-              <Overview />
+              <OverviewChart />
+              <LastestInvoices />
             </div>
           </TabsContent>
         </Tabs>

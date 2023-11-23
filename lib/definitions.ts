@@ -26,10 +26,12 @@ export type Invoice = {
   status: "pending" | "paid"
 }
 
-export type Revenue = {
-  month: string
-  revenue: number
-}
+export type Revenue = [
+  {
+    month: string
+    revenue: number
+  },
+]
 
 export type LatestInvoice = {
   id: string
