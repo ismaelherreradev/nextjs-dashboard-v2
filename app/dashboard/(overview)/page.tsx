@@ -1,4 +1,5 @@
 import CardWrapper from "@/components/dashboard/cards-wrapper"
+import { Overview } from "@/components/dashboard/chart"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { LayoutDashboardIcon } from "lucide-react"
 
@@ -17,7 +18,12 @@ export default function Dashboard() {
             <TabsTrigger value="overview">Overview</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="space-y-4">
-            <CardWrapper />
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <CardWrapper />
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+              <Overview />
+            </div>
           </TabsContent>
         </Tabs>
       </div>

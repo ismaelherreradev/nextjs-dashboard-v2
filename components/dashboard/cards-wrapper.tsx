@@ -1,5 +1,5 @@
-import { fetchCardData } from "@/lib/data";
 import Cards from "./cards"
+import { fetchCardData } from "@/lib/data"
 
 export default async function CardWrapper() {
   const {
@@ -7,11 +7,10 @@ export default async function CardWrapper() {
     numberOfCustomers,
     totalPaidInvoices,
     totalPendingInvoices,
-  } = await fetchCardData();
+  } = await fetchCardData()
 
   return (
     <>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <Cards title="Collected" value={totalPaidInvoices} type="collected" />
       <Cards title="Pending" value={totalPendingInvoices} type="pending" />
       <Cards title="Total Invoices" value={numberOfInvoices} type="invoices" />
@@ -20,7 +19,6 @@ export default async function CardWrapper() {
         value={numberOfCustomers}
         type="customers"
       />
-      </div>
     </>
   )
 }
